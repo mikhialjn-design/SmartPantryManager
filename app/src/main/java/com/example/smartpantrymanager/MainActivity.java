@@ -35,12 +35,36 @@ public class MainActivity extends AppCompatActivity {
         Button buttonAddIngredient =
                 findViewById(R.id.buttonAddIngredient);
 
+        Button buttonSuggestedRecipes =
+                findViewById(R.id.buttonSuggestedRecipes);
+
+        Button buttonSettings =
+                findViewById(R.id.buttonSettings);
+
         databaseHelper = new DatabaseHelper(this);
 
         buttonAddIngredient.setOnClickListener(v -> {
             Intent intent = new Intent(
                     MainActivity.this,
                     AddEditIngredientActivity.class
+            );
+
+            startActivity(intent);
+        });
+
+        buttonSuggestedRecipes.setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    MainActivity.this,
+                    SuggestedRecipesActivity.class
+            );
+
+            startActivity(intent);
+        });
+
+        buttonSettings.setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    MainActivity.this,
+                    SettingsActivity.class
             );
 
             startActivity(intent);
@@ -138,11 +162,9 @@ public class MainActivity extends AppCompatActivity {
         actions.setGravity(Gravity.END);
 
         Button editButton = new Button(this);
-
         editButton.setText("Edit");
 
         Button deleteButton = new Button(this);
-
         deleteButton.setText("Delete");
 
         actions.addView(editButton);

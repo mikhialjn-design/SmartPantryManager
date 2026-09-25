@@ -22,7 +22,35 @@
         android:textSize="15sp"
         android:textColor="#68736B"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="28dp" />
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/buttonSuggestedRecipes"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Suggested Recipes"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:layout_marginEnd="6dp" />
+
+        <Button
+            android:id="@+id/buttonSettings"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Settings"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:layout_marginStart="6dp" />
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
