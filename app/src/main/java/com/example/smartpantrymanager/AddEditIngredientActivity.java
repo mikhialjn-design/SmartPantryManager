@@ -83,6 +83,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
                                     );
 
                             editExpiryDate.setText(selectedDate);
+                            editExpiryDate.setError(null);
                         },
                         calendar.get(Calendar.YEAR),
                         calendar.get(Calendar.MONTH),
@@ -109,13 +110,19 @@ public class AddEditIngredientActivity extends AppCompatActivity {
             return;
         }
 
-        editIngredientName.setText(ingredient.getName());
-
-        editQuantity.setText(
-                String.valueOf(ingredient.getQuantity())
+        editIngredientName.setText(
+                ingredient.getName()
         );
 
-        editUnit.setText(ingredient.getUnit());
+        editQuantity.setText(
+                String.valueOf(
+                        ingredient.getQuantity()
+                )
+        );
+
+        editUnit.setText(
+                ingredient.getUnit()
+        );
 
         editExpiryDate.setText(
                 ingredient.getExpiryDate()
@@ -125,37 +132,47 @@ public class AddEditIngredientActivity extends AppCompatActivity {
     private void saveIngredient() {
 
         String name =
-                editIngredientName.getText()
+                editIngredientName
+                        .getText()
                         .toString()
                         .trim();
 
         String quantityText =
-                editQuantity.getText()
+                editQuantity
+                        .getText()
                         .toString()
                         .trim();
 
         String unit =
-                editUnit.getText()
+                editUnit
+                        .getText()
                         .toString()
                         .trim();
 
         String expiryDate =
-                editExpiryDate.getText()
+                editExpiryDate
+                        .getText()
                         .toString()
                         .trim();
 
+        // Validate ingredient name
         if (name.isEmpty()) {
+
             editIngredientName.setError(
                     "Enter an ingredient name."
             );
+
             editIngredientName.requestFocus();
             return;
         }
 
+        // Validate quantity
         if (quantityText.isEmpty()) {
+
             editQuantity.setError(
                     "Enter a quantity."
             );
+
             editQuantity.requestFocus();
             return;
         }
@@ -163,7 +180,11 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         double quantity;
 
         try {
-            quantity = Double.parseDouble(quantityText);
+
+            quantity =
+                    Double.parseDouble(
+                            quantityText
+                    );
 
         } catch (NumberFormatException exception) {
 
@@ -176,18 +197,34 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         }
 
         if (quantity <= 0) {
+
             editQuantity.setError(
                     "Quantity must be greater than zero."
             );
+
             editQuantity.requestFocus();
             return;
         }
 
+        // Validate measurement unit
         if (unit.isEmpty()) {
+
             editUnit.setError(
                     "Enter a measurement unit."
             );
+
             editUnit.requestFocus();
+            return;
+        }
+
+        // Validate expiry date
+        if (expiryDate.isEmpty()) {
+
+            editExpiryDate.setError(
+                    "Select an expiry date."
+            );
+
+            editExpiryDate.requestFocus();
             return;
         }
 
@@ -202,7 +239,9 @@ public class AddEditIngredientActivity extends AppCompatActivity {
                     );
 
             long newId =
-                    databaseHelper.addIngredient(ingredient);
+                    databaseHelper.addIngredient(
+                            ingredient
+                    );
 
             if (newId != -1) {
 
@@ -235,7 +274,9 @@ public class AddEditIngredientActivity extends AppCompatActivity {
                     );
 
             int updatedRows =
-                    databaseHelper.updateIngredient(ingredient);
+                    databaseHelper.updateIngredient(
+                            ingredient
+                    );
 
             if (updatedRows > 0) {
 
