@@ -46,8 +46,8 @@ public class AddEditIngredientActivity extends AppCompatActivity {
                 getIntent().getIntExtra("INGREDIENT_ID", -1);
 
         if (ingredientId != -1) {
-            textFormTitle.setText("Edit Ingredient");
-            buttonSaveIngredient.setText("Update Ingredient");
+            textFormTitle.setText(R.string.edit_ingredient);
+            buttonSaveIngredient.setText(R.string.update_ingredient);
             loadIngredient();
         }
 
@@ -155,7 +155,6 @@ public class AddEditIngredientActivity extends AppCompatActivity {
                         .toString()
                         .trim();
 
-        // Validate ingredient name
         if (name.isEmpty()) {
 
             editIngredientName.setError(
@@ -166,7 +165,6 @@ public class AddEditIngredientActivity extends AppCompatActivity {
             return;
         }
 
-        // Validate quantity
         if (quantityText.isEmpty()) {
 
             editQuantity.setError(
@@ -206,7 +204,6 @@ public class AddEditIngredientActivity extends AppCompatActivity {
             return;
         }
 
-        // Validate measurement unit
         if (unit.isEmpty()) {
 
             editUnit.setError(
@@ -217,7 +214,6 @@ public class AddEditIngredientActivity extends AppCompatActivity {
             return;
         }
 
-        // Validate expiry date
         if (expiryDate.isEmpty()) {
 
             editExpiryDate.setError(
