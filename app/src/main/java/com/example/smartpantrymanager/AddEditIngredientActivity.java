@@ -102,7 +102,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
 
             Toast.makeText(
                     this,
-                    "Ingredient could not be found.",
+                    getString(R.string.ingredient_not_found),
                     Toast.LENGTH_SHORT
             ).show();
 
@@ -158,7 +158,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         if (name.isEmpty()) {
 
             editIngredientName.setError(
-                    "Enter an ingredient name."
+                    getString(R.string.enter_ingredient_name)
             );
 
             editIngredientName.requestFocus();
@@ -168,7 +168,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         if (quantityText.isEmpty()) {
 
             editQuantity.setError(
-                    "Enter a quantity."
+                    getString(R.string.enter_quantity)
             );
 
             editQuantity.requestFocus();
@@ -187,7 +187,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         } catch (NumberFormatException exception) {
 
             editQuantity.setError(
-                    "Enter a valid quantity."
+                    getString(R.string.invalid_quantity)
             );
 
             editQuantity.requestFocus();
@@ -197,7 +197,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         if (quantity <= 0) {
 
             editQuantity.setError(
-                    "Quantity must be greater than zero."
+                    getString(R.string.quantity_greater_than_zero)
             );
 
             editQuantity.requestFocus();
@@ -207,7 +207,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         if (unit.isEmpty()) {
 
             editUnit.setError(
-                    "Enter a measurement unit."
+                    getString(R.string.enter_measurement_unit)
             );
 
             editUnit.requestFocus();
@@ -217,7 +217,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
         if (expiryDate.isEmpty()) {
 
             editExpiryDate.setError(
-                    "Select an expiry date."
+                    getString(R.string.select_expiry_date)
             );
 
             editExpiryDate.requestFocus();
@@ -243,7 +243,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
 
                 Toast.makeText(
                         this,
-                        "Ingredient added.",
+                        getString(R.string.ingredient_added),
                         Toast.LENGTH_SHORT
                 ).show();
 
@@ -253,7 +253,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
 
                 Toast.makeText(
                         this,
-                        "Ingredient could not be saved.",
+                        getString(R.string.ingredient_save_failed),
                         Toast.LENGTH_SHORT
                 ).show();
             }
@@ -278,7 +278,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
 
                 Toast.makeText(
                         this,
-                        "Ingredient updated.",
+                        getString(R.string.ingredient_updated),
                         Toast.LENGTH_SHORT
                 ).show();
 
@@ -288,7 +288,7 @@ public class AddEditIngredientActivity extends AppCompatActivity {
 
                 Toast.makeText(
                         this,
-                        "Ingredient could not be updated.",
+                        getString(R.string.ingredient_update_failed),
                         Toast.LENGTH_SHORT
                 ).show();
             }

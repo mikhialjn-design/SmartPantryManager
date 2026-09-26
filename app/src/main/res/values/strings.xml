@@ -2,4 +2,15 @@
     <string name="app_name">Smart Pantry Manager</string>
     <string name="edit_ingredient">Edit Ingredient</string>
     <string name="update_ingredient">Update Ingredient</string>
+    <string name="ingredient_not_found">Ingredient could not be found.</string>
+    <string name="enter_ingredient_name">Enter an ingredient name.</string>
+    <string name="enter_quantity">Enter a quantity.</string>
+    <string name="invalid_quantity">Enter a valid quantity.</string>
+    <string name="quantity_greater_than_zero">Quantity must be greater than zero.</string>
+    <string name="enter_measurement_unit">Enter a measurement unit.</string>
+    <string name="select_expiry_date">Select an expiry date.</string>
+    <string name="ingredient_added">Ingredient added.</string>
+    <string name="ingredient_save_failed">Ingredient could not be saved.</string>
+    <string name="ingredient_updated">Ingredient updated.</string>
+    <string name="ingredient_update_failed">Ingredient could not be updated.</string>
 </resources>
